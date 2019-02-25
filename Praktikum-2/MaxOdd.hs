@@ -70,8 +70,11 @@ maxOddHelper::[Int]->[(Int,Int)]->(Int,Int)
 -- maxOddHelper merupakan fungsi maxOdd yang sudah ditambahkan
 -- parameternya
 cekSama::Int->(Int,Int)->Bool
+-- cekSama a (b,c) merupakan fungsi yang mengecek apakah bilangan a sama dengan b
 tambahFreq::(Int,Int)->(Int,Int)
+-- cekSama (a,b) merupakan fungsi yang menambahkan 1 kepada b
 cekBesar::(Int,Int)->(Int,Int)->Bool
+-- cekBesar (a,b) (c,d) merupakan fungsi yang memeriksa mana yang lebih besar antara a dan c
 
 maxOdd l=
 	maxOddHelper l []
