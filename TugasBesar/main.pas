@@ -66,6 +66,7 @@ begin
         begin
             writeln('Bye');
             exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);    //F16
+            exit;
         end
         else 
         begin
