@@ -16,6 +16,8 @@ var
     lPinjam     :listPinjam;
     lKembali    :listKembali;
     lHilang     :listHilang;
+    inputStr    :string;
+    inputInt    :integer;
 
 begin
     // Greeting Message + Inisialisasi
@@ -26,11 +28,14 @@ begin
     currentUser.username:='';
     currentUser.password:='';
     currentUser.role:=false;
+    inputStr:='';
+    inputInt:=0;
     writeln('Welcome :)');
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
     // Input opsi
     while ((sudahLogin=false)) do
     begin
+        readln(option);
         if (option='help') then
         begin
             writeln('login: Login ke sistem.');
@@ -69,7 +74,24 @@ begin
 
     while (currentUser.role=false) do
     begin
-
+        readln(option);
+        if (option='cari') then
+        begin
+            write('Masukkan kategori: ');
+            readln(inputStr);
+            search(inputStr,lBuku);     // F03
+        end
+        else if (option='cari_tahun_terbit') then
+        begin
+            write('Masukkan tahun: ');
+            readln(inputInt);
+            write('Masukkan kategori: ');
+            readln(inputStr);
+            searchTahunTerbit(inputInt,inputStr,lBuku);     // F04
+        end if (option='pinjam_buku') then
+        begin
+            
+        end;
     end;
 
     // Greeting Message for admin

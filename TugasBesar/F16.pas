@@ -33,6 +33,7 @@ implementation
                 write(stream,lBuku.list[i].kategori);
                 writeln(stream,'');
             end;
+            close(stream);
 
             assign(stream,'User.csv');
             rewrite(stream);
@@ -49,6 +50,7 @@ implementation
                 write(stream,lAkun.list[i].role);
                 writeln(stream,'');
             end;
+            close(stream);
 
             assign(stream,'HistoryPeminjaman.csv');
             rewrite(stream);
@@ -65,6 +67,7 @@ implementation
                 write(stream,lPinjam.list[i].status_pengembalian);
                 writeln(stream,'');
             end;
+            close(stream);
 
             assign(stream,'HistoryPengembalian.csv');
             rewrite(stream);
@@ -77,6 +80,7 @@ implementation
                 write(stream,tanggalToString(lKembali.list[i].tanggal_pengembalian));
                 writeln(stream,'');
             end;
+            close(stream);
 
             assign(stream,'LaporanBukuHilang.csv');
             rewrite(stream);
@@ -89,6 +93,7 @@ implementation
                 write(stream,tanggalToString(lHilang.list[i].tanggal_laporan));
                 writeln(stream,'');
             end;
+            close(stream);
         end;
     end;
 
