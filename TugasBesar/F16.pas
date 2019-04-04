@@ -4,9 +4,8 @@
 unit F16;
 // Exit
 interface
-    uses typeList,sysutils;
+    uses typeList,tools;
     procedure exitProgram(save: boolean; var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
-    function tanggalToString(date: tanggal):string;
 
 implementation
     procedure exitProgram(save: boolean; var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
@@ -95,52 +94,5 @@ implementation
             end;
             close(stream);
         end;
-    end;
-
-    function tanggalToString(date: tanggal):string;
-    var
-        ret:string;
-    begin
-        ret:='';
-        if (date.hari<10) then
-        begin
-            ret:=ret+'0';
-            ret:=ret+IntToStr(date.hari);
-        end
-        else 
-        begin
-            ret:=ret+IntToStr(date.hari);
-        end;
-        ret:=ret+'/';
-        if (date.bulan<10) then
-        begin
-            ret:=ret+'0';
-            ret:=ret+IntToStr(date.bulan);
-        end
-        else 
-        begin
-            ret:=ret+IntToStr(date.bulan);
-        end;
-        ret:=ret+'/';
-        if (date.tahun<10) then
-        begin
-            ret:=ret+'000';
-            ret:=ret+IntToStr(date.tahun);
-        end
-        else if (date.tahun<100) then
-        begin
-            ret:=ret+'00';
-            ret:=ret+IntToStr(date.tahun);
-        end
-        else if (date.tahun<1000) then
-        begin
-            ret:=ret+'0';
-            ret:=ret+IntToStr(date.tahun);
-        end
-        else 
-        begin
-            ret:=ret+IntToStr(date.tahun);
-        end;
-        tanggalToString:=ret;
     end;
 end.

@@ -3,7 +3,7 @@
 // Tester   : 
 Program main;
 // Main Program
-uses F01,F02,F03,F04,F05,F06,F07,F08,F09,F10,F11,F12,F13,F14,F15,F16,typeList;
+uses F01,F02,F03,F04,F05,F06,F07,F08,F09,F10,F11,F12,F13,F14,F15,F16,typeList,tools;
 
 // KAMUS
 var
@@ -18,7 +18,6 @@ var
     lHilang     :listHilang;
     inputStr    :string;
     inputInt    :integer;
-    currentDate :tanggal;
 
 begin
     // Greeting Message + Inisialisasi
@@ -31,9 +30,6 @@ begin
     currentUser.role:=false;
     inputStr:='';
     inputInt:=0;
-    currentDate.hari:=0;
-    currentDate.bulan:=0;
-    currentDate.tahun:=0;
     writeln('Welcome :)');
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
     // Input opsi
@@ -100,10 +96,13 @@ begin
             readln(inputInt);
             write('Masukkan tanggal hari ini: ');
             readln(inputStr);
-            currentDate.hari:=(Integer(inputStr[1])-48)*10+(Integer(inputStr[2])-48);
-            currentDate.bulan:=(Integer(inputStr[4])-48)*10+(Integer(inputStr[5])-48);
-            currentDate.tahun:=(Integer(inputStr[7])-48)*1000+(Integer(inputStr[8])-48)*100+(Integer(inputStr[9])-48)*10+(Integer(inputStr[10])-48);
-            pinjamBuku(currentUser.username,inputInt,currentDate,lBuku,lPinjam);
+            pinjamBuku(currentUser.username,inputInt,stringToTanggal(inputStr),lBuku,lPinjam);    // F05
+        end
+        else if (option='kembalikan_buku') then
+        begin
+            write('Masukkan id buku yang ingin dikembalikan: ');
+            readln(inputInt);
+            kembalikanBuku(currentUser.username,inputInt,lPinjam,lBuku);     // F06
         end;
     end;
 
