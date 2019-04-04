@@ -190,6 +190,10 @@ begin
         else if (option='statistik') then
         begin
             statistik(lAkun,lBuku);     // F12;
+        end
+        else if (option='cari_anggota') then
+        begin
+            cariAnggota(lAkun);     //  F15
         end;
     end;
 end.
