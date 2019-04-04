@@ -114,7 +114,25 @@ begin
             readln(inputStr);
             write('Masukkan tanggal pelaporan: ');
             readln(inputStr2);
-            laporHilang(currentUser.username,inputInt,inputStr,stringToTanggal(inputStr2),lHilang);      // F07;
+            laporHilang(currentUser.username,inputInt,inputStr,stringToTanggal(inputStr2),lHilang);      // F07
+        end 
+        else if (option='save') then
+        begin
+            simpanData(lBuku,lAkun,lPinjam,lKembali,lHilang);   // F13
+        end
+        else if (option='exit') then
+        begin
+            writeln('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
+            readln(inputStr);
+            if (inputStr='Y') then
+            begin
+                exitProgram(true,lBuku,lAkun,lPinjam,lKembali,lHilang);
+            end
+            else
+            begin
+                exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);
+            end;
+            exit;
         end;
     end;
 
