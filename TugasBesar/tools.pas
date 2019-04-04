@@ -222,7 +222,7 @@ implementation
 
     function stringToBool(str: string):boolean;
     begin
-        if (str='false') then
+        if (str='FALSE') then
         begin
             stringToBool:=false;
         end

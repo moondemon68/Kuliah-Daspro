@@ -52,7 +52,6 @@ begin
             else 
             begin
                 writeln('Welcome, ',currentUser.username);
-                writeln(currentUser.role);
             end;
         end
         else if (option='exit') then
@@ -73,7 +72,17 @@ begin
     while (currentUser.role=false) do
     begin
         readln(option);
-        if (option='cari') then
+        if (option='help') then
+        begin
+            writeln('cari               : Mencari buku berdasarkan kategori');
+            writeln('cari_tahun_terbit  : Mencari buku berdasarkan tahun terbit');
+            writeln('pinjam_buku        : Meminjam buku');
+            writeln('kembalikan_buku    : Mengembalikan buku');
+            writeln('lapor_hilang       : Melapor buku yang hilang');
+            writeln('save               : Menyimpan data ke format csv');
+            writeln('exit               : Keluar dari sistem');
+        end
+        else if (option='cari') then
         begin
             search(lBuku);     // F03
         end
@@ -102,6 +111,11 @@ begin
             exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
             writeln('Bye');
             exit;
+        end
+        else 
+        begin
+            writeln('Opsi tidak ditemukan!');
+            writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
         end;
     end;
 
@@ -111,7 +125,20 @@ begin
     begin
         write('Masukkan pilihan: ');
         readln(option);
-        if (option='register') then
+        if (option='help') then
+        begin
+            writeln('register           : Meregistrasi pengunjung baru');
+            writeln('cari               : Mencari buku berdasarkan kategori');
+            writeln('cari_tahun_terbit  : Mencari buku berdasarkan tahun terbit');
+            writeln('lihat_laporan      : Melihat laporan buku yang hilang');
+            writeln('tambah_buku        : Menambah buku baru');
+            writeln('tambah_jumlah_buku :  Menambah jumlah buku yang sudah ada');
+            writeln('riwayat            : Melihat riwayat peminjaman buku seorang pengunjung');
+            writeln('statistik          : Melihat statistik pengunjung dan buku');
+            writeln('save               : Menyimpan data ke format csv');
+            writeln('exit               : Keluar dari sistem');
+        end
+        else if (option='register') then
         begin
             register(lAkun);     // F01
         end 
@@ -147,11 +174,20 @@ begin
         begin
             cariAnggota(lAkun);     //  F15
         end
+        else if (option='save') then
+        begin
+            simpanData(lBuku,lAkun,lPinjam,lKembali,lHilang);   // F13
+        end
         else if (option='exit') then
         begin
             exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
             writeln('Bye');
             exit;
+        end
+        else 
+        begin
+            writeln('Opsi tidak ditemukan!');
+            writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
         end;
     end;
 end.

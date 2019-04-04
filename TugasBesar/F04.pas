@@ -17,7 +17,7 @@ implementation
     begin
         write('Masukkan tahun: ');
         readln(inputInt);
-        write('Masukkan kategori: ');
+        write('Masukkan kategori (<,<=,>,>=,=): ');
         readln(inputStr);
         ada:=false;
         writeln('Buku yang terbit ',inputStr,' ',inputInt,':');

@@ -50,7 +50,14 @@ implementation
             write(stream,',');
             write(stream,lAkun.list[i].password);
             write(stream,',');
-            write(stream,lAkun.list[i].role);
+            if (lAkun.list[i].role=true) then
+            begin
+                write(stream,'TRUE');
+            end
+            else
+            begin
+                write(stream,'FALSE');
+            end;
             writeln(stream,'');
         end;
         close(stream);
