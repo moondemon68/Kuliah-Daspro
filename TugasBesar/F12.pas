@@ -28,7 +28,7 @@ implementation
         programming:=0;
         for i:=1 to lAkun.neff do
         begin
-            if (lAkun.list[i].role=false) then
+            if (lAkun.list[i].role=true) then
             begin
                 admin:=admin+1;
             end

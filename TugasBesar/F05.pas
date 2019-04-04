@@ -38,6 +38,7 @@ implementation
                     lPinjam.list[lPinjam.neff].tanggal_peminjaman:=currentDate;
                     lPinjam.list[lPinjam.neff].tanggal_batas_pengembalian:=addOneWeek(currentDate);
                     lPinjam.list[lPinjam.neff].status_pengembalian:=false;
+                    writeln('Buku ',lBuku.list[i].judul_buku,' berhasil dipinjam!');
                 end
                 else
                 begin

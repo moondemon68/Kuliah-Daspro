@@ -67,10 +67,12 @@ begin
         end;
     end;
 
-    // Greeting Message for non-admin
-
+    // Logged in as non-admin
+    
     while (currentUser.role=false) do
     begin
+        writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
+        write('Masukkan pilihan: ');
         readln(option);
         if (option='help') then
         begin
@@ -119,10 +121,11 @@ begin
         end;
     end;
 
-    // Greeting Message for admin
+    // Logged in as admin
 
     while (currentUser.role=true) do
     begin
+        writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
         write('Masukkan pilihan: ');
         readln(option);
         if (option='help') then
@@ -132,7 +135,7 @@ begin
             writeln('cari_tahun_terbit  : Mencari buku berdasarkan tahun terbit');
             writeln('lihat_laporan      : Melihat laporan buku yang hilang');
             writeln('tambah_buku        : Menambah buku baru');
-            writeln('tambah_jumlah_buku :  Menambah jumlah buku yang sudah ada');
+            writeln('tambah_jumlah_buku : Menambah jumlah buku yang sudah ada');
             writeln('riwayat            : Melihat riwayat peminjaman buku seorang pengunjung');
             writeln('statistik          : Melihat statistik pengunjung dan buku');
             writeln('save               : Menyimpan data ke format csv');
