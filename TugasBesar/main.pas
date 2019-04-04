@@ -178,6 +178,10 @@ begin
         else if (option='tambah_buku') then
         begin
             tambahBuku(lBuku);     // F09
+        end
+        else if (option='tambah_jumlah_buku') then
+        begin
+            tambahJumlahBuku(lBuku);       // F10;
         end;
     end;
 end.
