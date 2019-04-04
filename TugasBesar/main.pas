@@ -36,6 +36,7 @@ begin
     inputStr3:='';
     inputStr4:='';
     inputInt:=0;
+    loadData(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F13
     writeln('Welcome :)');
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
     // Input opsi

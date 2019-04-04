@@ -4,104 +4,70 @@
 unit F13;
 // Load file
 interface
-    uses typeList,tools;
-    procedure simpanData(var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
+    uses typeList,tools,sysutils;
+    procedure loadData(var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
 
 implementation
-    procedure simpanData(var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
+    procedure loadData(var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
     var
-        stream:text;
         filename:string;
         i:integer;
-
+        p:integer; //pointer
+        s:string;
+        tmp:string;
+        stream:TextFile;
     begin
-        write('Masukkan nama File Buku: ');
-        readln(filename);
-        assign(stream,filename);
-        rewrite(stream);
-        for i:=1 to lBuku.neff do
-        begin
-            write(stream,lBuku.list[i].id_buku);
-            write(stream,',');
-            write(stream,lBuku.list[i].judul_buku);
-            write(stream,',');
-            write(stream,lBuku.list[i].author);
-            write(stream,',');
-            write(stream,lBuku.list[i].jumlah_buku);
-            write(stream,',');
-            write(stream,lBuku.list[i].tahun_penerbit);
-            write(stream,',');
-            write(stream,lBuku.list[i].kategori);
-            writeln(stream,'');
-        end;
-        close(stream);
-
+        //Load Akun
         write('Masukkan nama File User: ');
         readln(filename);
         assign(stream,filename);
-        rewrite(stream);
-        for i:=1 to lAkun.neff do
+        reset(stream);
+        i:=0;
+        while not(eof(stream)) do
         begin
-            write(stream,lAkun.list[i].nama);
-            write(stream,',');
-            write(stream,lAkun.list[i].alamat);
-            write(stream,',');
-            write(stream,lAkun.list[i].username);
-            write(stream,',');
-            write(stream,lAkun.list[i].password);
-            write(stream,',');
-            write(stream,lAkun.list[i].role);
-            writeln(stream,'');
+            i:=i+1;
+            lAkun.neff:=lAkun.neff+1;
+            readln(stream,s);
+            p:=0;
+            lAkun.list[i].nama:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                lAkun.list[i].nama:=lAkun.list[i].nama+s[p];
+            end;
+            p:=p+1;
+            lAkun.list[i].alamat:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                lAkun.list[i].alamat:=lAkun.list[i].alamat+s[p];
+            end;
+            p:=p+1;
+            lAkun.list[i].username:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                lAkun.list[i].username:=lAkun.list[i].username+s[p];
+            end;
+            p:=p+1;
+            lAkun.list[i].password:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                lAkun.list[i].password:=lAkun.list[i].password+s[p];
+            end;
+            p:=p+1;
+            lAkun.list[i].role:=false;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            if (tmp='true') then
+            begin
+                lAkun.list[i].role:=true;
+            end;
         end;
-        close(stream);
-
-        write('Masukkan nama File Peminjaman: ');
-        readln(filename);
-        assign(stream,filename);
-        rewrite(stream);
-        for i:=1 to lPinjam.neff do
-        begin
-            write(stream,lPinjam.list[i].username);
-            write(stream,',');
-            write(stream,lPinjam.list[i].id_buku);
-            write(stream,',');
-            write(stream,tanggalToString(lPinjam.list[i].tanggal_peminjaman));
-            write(stream,',');
-            write(stream,tanggalToString(lPinjam.list[i].tanggal_batas_pengembalian));
-            write(stream,',');
-            write(stream,lPinjam.list[i].status_pengembalian);
-            writeln(stream,'');
-        end;
-        close(stream);
-
-        write('Masukkan nama File Pengembalian: ');
-        readln(filename);
-        assign(stream,filename);
-        rewrite(stream);
-        for i:=1 to lKembali.neff do
-        begin
-            write(stream,lKembali.list[i].username);
-            write(stream,',');
-            write(stream,lKembali.list[i].id_buku);
-            write(stream,',');
-            write(stream,tanggalToString(lKembali.list[i].tanggal_pengembalian));
-            writeln(stream,'');
-        end;
-        close(stream);
-
-        write('Masukkan nama File Buku Hilang: ');
-        readln(filename);
-        assign(stream,filename);
-        rewrite(stream);
-        for i:=1 to lHilang.neff do
-        begin
-            write(stream,lHilang.list[i].username);
-            write(stream,',');
-            write(stream,lHilang.list[i].id_buku);
-            write(stream,',');
-            write(stream,tanggalToString(lHilang.list[i].tanggal_laporan));
-            writeln(stream,'');
-        end;
-        close(stream);
     end;
 end.

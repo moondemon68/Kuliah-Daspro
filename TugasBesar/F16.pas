@@ -4,7 +4,7 @@
 unit F16;
 // Exit
 interface
-    uses typeList,tools,F13;
+    uses typeList,tools,F14;
     procedure exitProgram(save: boolean; var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
 
 implementation
