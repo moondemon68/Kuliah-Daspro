@@ -5,16 +5,17 @@ unit F06;
 // Pengembalian buku
 interface
     uses typeList,tools;
-    procedure kembalikanBuku(username:string; inputInt: integer; var lPinjam: listPinjam; var lBuku: listBuku);
+    procedure kembalikanBuku(username:string; inputInt: integer; var lPinjam: listPinjam; var lBuku: listBuku; var lKembali: listKembali);
 
 implementation
-    procedure kembalikanBuku(username:string; inputInt: integer; var lPinjam: listPinjam; var lBuku: listBuku);
+    procedure kembalikanBuku(username:string; inputInt: integer; var lPinjam: listPinjam; var lBuku: listBuku; var lKembali: listKembali);
     var 
         i:integer;
         ada:boolean;
         inputDate:string;
         x:integer;
     begin
+        // Update list pinjam
         i:=0;
         x:=0;
         ada:=false;
@@ -42,5 +43,22 @@ implementation
                 lPinjam.list[i].status_pengembalian:=true;
             end;
         end;
+        // Update list buku
+        i:=0;
+        ada:=false;
+        while (i<lBuku.neff) and (not(ada)) do
+        begin
+            i:=i+1;
+            if (lBuku.list[i].id_buku=inputInt) then
+            begin
+                ada:=true;
+                lBuku.list[i].jumlah_buku:=lBuku.list[i].jumlah_buku+1;
+            end;
+        end;
+        // Update list kembali
+        lKembali.neff:=lKembali.neff+1;
+        lKembali.list[lKembali.neff].username:=username;
+        lKembali.list[lKembali.neff].id_buku:=inputInt;
+        lKembali.list[lKembali.neff].tanggal_pengembalian:=stringToTanggal(inputDate);
     end;
 end.

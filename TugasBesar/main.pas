@@ -17,6 +17,7 @@ var
     lKembali    :listKembali;
     lHilang     :listHilang;
     inputStr    :string;
+    inputStr2   :string;
     inputInt    :integer;
 
 begin
@@ -29,6 +30,7 @@ begin
     currentUser.password:='';
     currentUser.role:=false;
     inputStr:='';
+    inputStr2:='';
     inputInt:=0;
     writeln('Welcome :)');
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
@@ -102,7 +104,17 @@ begin
         begin
             write('Masukkan id buku yang ingin dikembalikan: ');
             readln(inputInt);
-            kembalikanBuku(currentUser.username,inputInt,lPinjam,lBuku);     // F06
+            kembalikanBuku(currentUser.username,inputInt,lPinjam,lBuku,lKembali);     // F06
+        end
+        else if (option='lapor_hilang') then
+        begin
+            write('Masukkan id buku: ');
+            readln(inputInt);
+            write('Masukkan judul buku: ');
+            readln(inputStr);
+            write('Masukkan tanggal pelaporan: ');
+            readln(inputStr2);
+            laporHilang(currentUser.username,inputInt,inputStr,stringToTanggal(inputStr2),lHilang);      // F07;
         end;
     end;
 
