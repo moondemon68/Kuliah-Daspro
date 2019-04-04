@@ -18,6 +18,8 @@ var
     lHilang     :listHilang;
     inputStr    :string;
     inputStr2   :string;
+    inputStr3   :string;
+    inputStr4   :string;
     inputInt    :integer;
 
 begin
@@ -31,6 +33,8 @@ begin
     currentUser.role:=false;
     inputStr:='';
     inputStr2:='';
+    inputStr3:='';
+    inputStr4:='';
     inputInt:=0;
     writeln('Welcome :)');
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
@@ -126,11 +130,11 @@ begin
             readln(inputStr);
             if (inputStr='Y') then
             begin
-                exitProgram(true,lBuku,lAkun,lPinjam,lKembali,lHilang);
+                exitProgram(true,lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
             end
             else
             begin
-                exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);
+                exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);    // F16
             end;
             exit;
         end;
@@ -140,6 +144,18 @@ begin
 
     while (currentUser.role=true) do
     begin
-
+        readln(option);
+        if (option='register') then
+        begin
+            writeln('Masukkan nama pengunjung: ');
+            readln(inputStr);
+            writeln('Masukkan alamat pengunjung: ');
+            readln(inputStr2);
+            writeln('Masukkan username pengunjung: ');
+            readln(inputStr3);
+            writeln('Masukkan password pengunjung: ');
+            readln(inputStr4);
+            register(inputStr,inputStr2,inputStr3,inputStr4,lAkun);     // F01
+        end;
     end;
 end.
