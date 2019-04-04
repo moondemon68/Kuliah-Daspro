@@ -156,6 +156,24 @@ begin
             writeln('Masukkan password pengunjung: ');
             readln(inputStr4);
             register(inputStr,inputStr2,inputStr3,inputStr4,lAkun);     // F01
+        end 
+        else if (option='cari') then
+        begin
+            write('Masukkan kategori: ');
+            readln(inputStr);
+            search(inputStr,lBuku);     // F03
+        end
+        else if (option='cari_tahun_terbit') then
+        begin
+            write('Masukkan tahun: ');
+            readln(inputInt);
+            write('Masukkan kategori: ');
+            readln(inputStr);
+            searchTahunTerbit(inputInt,inputStr,lBuku);     // F04
+        end 
+        else if (option='lihat_laporan') then
+        begin
+            lihatLaporan(lHilang,lBuku);     // F08
         end;
     end;
 end.
