@@ -5,18 +5,22 @@ unit F01;
 // Registrasi akun
 interface
     uses typeList,tools;   
-    procedure register(nama: string; alamat:string; username:string; password:string; var lAkun:listAkun);
+    procedure register(var lAkun:listAkun);
 
 implementation
-    procedure register(nama: string; alamat:string; username:string; password:string; var lAkun:listAkun);
+    procedure register(var lAkun:listAkun);
     begin
         lAkun.neff:=lAkun.neff+1;
-        lAkun.list[lAkun.neff].nama:=nama;
-        lAkun.list[lAkun.neff].alamat:=alamat;
-        lAkun.list[lAkun.neff].username:=username;
-        lAkun.list[lAkun.neff].password:=password;
+        write('Masukkan nama pengunjung: ');
+        readln(lAkun.list[lAkun.neff].nama);
+        write('Masukkan alamat pengunjung: ');
+        readln(lAkun.list[lAkun.neff].alamat);
+        write('Masukkan username pengunjung: ');
+        readln(lAkun.list[lAkun.neff].username);
+        write('Masukkan password pengunjung: ');
+        readln(lAkun.list[lAkun.neff].password);
         lAkun.list[lAkun.neff].role:=false;
         writeln();
-        writeln('Pengunjung ',nama,' berhasil terdaftar sebagai user.');
+        writeln('Pengunjung ',lAkun.list[lAkun.neff].nama,' berhasil terdaftar sebagai user.');
     end;
 end.

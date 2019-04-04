@@ -77,6 +77,7 @@ implementation
             end;
             lBuku.list[i].kategori:=tmp;
         end;
+        close(stream);
 
         //Load Akun
         write('Masukkan nama File User: ');
@@ -130,6 +131,7 @@ implementation
             end;
             lAkun.list[i].role:=stringToBool(tmp);
         end;
+        close(stream);
 
         //Load Peminjaman
         write('Masukkan nama File Peminjaman: ');
@@ -183,6 +185,7 @@ implementation
             end;
             lPinjam.list[i].status_pengembalian:=stringToBool(tmp);
         end;
+        close(stream);
 
         //Load Pengembalian
         write('Masukkan nama File Pengembalian: ');
@@ -220,6 +223,7 @@ implementation
             end;
             lKembali.list[i].tanggal_pengembalian:=stringToTanggal(tmp);
         end;
+        close(stream);
 
         //Load Kehilangan
         write('Masukkan nama File Kehilangan: ');
@@ -257,5 +261,6 @@ implementation
             end;
             lHilang.list[i].tanggal_laporan:=stringToTanggal(tmp);
         end;
+        close(stream);
     end;
 end.

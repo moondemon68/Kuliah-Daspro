@@ -36,8 +36,8 @@ begin
     inputStr3:='';
     inputStr4:='';
     inputInt:=0;
-    loadData(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F13
     writeln('Welcome :)');
+    loadData(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F13
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
     // Input opsi
     while ((sudahLogin=false)) do
@@ -68,7 +68,7 @@ begin
         else if (option='exit') then
         begin
             writeln('Bye');
-            exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);    //F16
+            exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
             exit;
         end
         else 
@@ -85,17 +85,11 @@ begin
         readln(option);
         if (option='cari') then
         begin
-            write('Masukkan kategori: ');
-            readln(inputStr);
-            search(inputStr,lBuku);     // F03
+            search(lBuku);     // F03
         end
         else if (option='cari_tahun_terbit') then
         begin
-            write('Masukkan tahun: ');
-            readln(inputInt);
-            write('Masukkan kategori: ');
-            readln(inputStr);
-            searchTahunTerbit(inputInt,inputStr,lBuku);     // F04
+            searchTahunTerbit(lBuku);     // F04
         end 
         else if (option='pinjam_buku') then
         begin
@@ -127,16 +121,7 @@ begin
         end
         else if (option='exit') then
         begin
-            writeln('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
-            readln(inputStr);
-            if (inputStr='Y') then
-            begin
-                exitProgram(true,lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
-            end
-            else
-            begin
-                exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);    // F16
-            end;
+            exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
             exit;
         end;
     end;
@@ -149,29 +134,15 @@ begin
         readln(option);
         if (option='register') then
         begin
-            writeln('Masukkan nama pengunjung: ');
-            readln(inputStr);
-            writeln('Masukkan alamat pengunjung: ');
-            readln(inputStr2);
-            writeln('Masukkan username pengunjung: ');
-            readln(inputStr3);
-            writeln('Masukkan password pengunjung: ');
-            readln(inputStr4);
-            register(inputStr,inputStr2,inputStr3,inputStr4,lAkun);     // F01
+            register(lAkun);     // F01
         end 
         else if (option='cari') then
         begin
-            write('Masukkan kategori: ');
-            readln(inputStr);
-            search(inputStr,lBuku);     // F03
+            search(lBuku);     // F03
         end
         else if (option='cari_tahun_terbit') then
         begin
-            write('Masukkan tahun: ');
-            readln(inputInt);
-            write('Masukkan kategori: ');
-            readln(inputStr);
-            searchTahunTerbit(inputInt,inputStr,lBuku);     // F04
+            searchTahunTerbit(lBuku);     // F04
         end 
         else if (option='lihat_laporan') then
         begin
@@ -199,16 +170,7 @@ begin
         end
         else if (option='exit') then
         begin
-            writeln('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
-            readln(inputStr);
-            if (inputStr='Y') then
-            begin
-                exitProgram(true,lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
-            end
-            else
-            begin
-                exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);    // F16
-            end;
+            exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
             exit;
         end;
     end;

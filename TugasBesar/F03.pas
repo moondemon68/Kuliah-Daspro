@@ -5,19 +5,22 @@ unit F03;
 // Pencarian buku berdasarkan kategori
 interface
     uses typeList;
-    procedure search(input: string; var lBuku: listBuku);
+    procedure search(var lBuku: listBuku);
 
 implementation
-    procedure search(input: string; var lBuku: listBuku);
+    procedure search(var lBuku: listBuku);
     var
         i:integer;
         ada:boolean;
+        inputStr:string;
     begin
+        write('Masukkan kategori: ');
+        readln(inputStr);
         ada:=false;
         writeln('Hasil pencarian:');
         for i:=1 to lBuku.neff do
         begin
-            if (input=lBuku.list[i].kategori) then
+            if (inputStr=lBuku.list[i].kategori) then
             begin
                 write(lBuku.list[i].id_buku,' | ');
                 write(lBuku.list[i].judul_buku,' | ');
