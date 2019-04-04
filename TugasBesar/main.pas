@@ -16,11 +16,6 @@ var
     lPinjam     :listPinjam;
     lKembali    :listKembali;
     lHilang     :listHilang;
-    inputStr    :string;
-    inputStr2   :string;
-    inputStr3   :string;
-    inputStr4   :string;
-    inputInt    :integer;
 
 begin
     // Greeting Message + Inisialisasi
@@ -31,11 +26,6 @@ begin
     currentUser.username:='';
     currentUser.password:='';
     currentUser.role:=false;
-    inputStr:='';
-    inputStr2:='';
-    inputStr3:='';
-    inputStr4:='';
-    inputInt:=0;
     writeln('Welcome :)');
     loadData(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F13
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
@@ -67,8 +57,8 @@ begin
         end
         else if (option='exit') then
         begin
-            writeln('Bye');
             exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
+            writeln('Bye');
             exit;
         end
         else 
@@ -93,27 +83,15 @@ begin
         end 
         else if (option='pinjam_buku') then
         begin
-            write('Masukkan id buku yang ingin dipinjam: ');
-            readln(inputInt);
-            write('Masukkan tanggal hari ini: ');
-            readln(inputStr);
-            pinjamBuku(currentUser.username,inputInt,stringToTanggal(inputStr),lBuku,lPinjam);    // F05
+            pinjamBuku(currentUser.username,lBuku,lPinjam);    // F05
         end
         else if (option='kembalikan_buku') then
         begin
-            write('Masukkan id buku yang ingin dikembalikan: ');
-            readln(inputInt);
-            kembalikanBuku(currentUser.username,inputInt,lPinjam,lBuku,lKembali);     // F06
+            kembalikanBuku(currentUser.username,lPinjam,lBuku,lKembali);     // F06
         end
         else if (option='lapor_hilang') then
         begin
-            write('Masukkan id buku: ');
-            readln(inputInt);
-            write('Masukkan judul buku: ');
-            readln(inputStr);
-            write('Masukkan tanggal pelaporan: ');
-            readln(inputStr2);
-            laporHilang(currentUser.username,inputInt,inputStr,stringToTanggal(inputStr2),lHilang);      // F07
+            laporHilang(currentUser.username,lHilang);      // F07
         end 
         else if (option='save') then
         begin
@@ -122,6 +100,7 @@ begin
         else if (option='exit') then
         begin
             exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
+            writeln('Bye');
             exit;
         end;
     end;
@@ -171,6 +150,7 @@ begin
         else if (option='exit') then
         begin
             exitProgram(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
+            writeln('Bye');
             exit;
         end;
     end;

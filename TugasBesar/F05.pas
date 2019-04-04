@@ -5,14 +5,22 @@ unit F05;
 // Peminjaman buku
 interface
     uses typeList,tools;
-    procedure pinjamBuku(user:string; inputInt: integer; currentDate: tanggal; var lBuku: listBuku; var lPinjam: listPinjam);
+    procedure pinjamBuku(user:string; var lBuku: listBuku; var lPinjam: listPinjam);
 
 implementation
-    procedure pinjamBuku(user:string; inputInt: integer; currentDate: tanggal; var lBuku: listBuku; var lPinjam: listPinjam);
+    procedure pinjamBuku(user:string; var lBuku: listBuku; var lPinjam: listPinjam);
     var
         ada:boolean;
         i:integer;
+        inputInt:integer;
+        inputStr:string;
+        currentDate:tanggal;
     begin
+        write('Masukkan id buku yang ingin dipinjam: ');
+        readln(inputInt);
+        write('Masukkan tanggal hari ini: ');
+        readln(inputStr);
+        currentDate:=stringToTanggal(inputStr);
         ada:=false;
         i:=0;
         while ((i<=lBuku.neff) and (ada=false)) do 

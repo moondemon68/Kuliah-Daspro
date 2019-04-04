@@ -5,16 +5,19 @@ unit F06;
 // Pengembalian buku
 interface
     uses typeList,tools;
-    procedure kembalikanBuku(username:string; inputInt: integer; var lPinjam: listPinjam; var lBuku: listBuku; var lKembali: listKembali);
+    procedure kembalikanBuku(username:string; var lPinjam: listPinjam; var lBuku: listBuku; var lKembali: listKembali);
 
 implementation
-    procedure kembalikanBuku(username:string; inputInt: integer; var lPinjam: listPinjam; var lBuku: listBuku; var lKembali: listKembali);
+    procedure kembalikanBuku(username:string; var lPinjam: listPinjam; var lBuku: listBuku; var lKembali: listKembali);
     var 
         i:integer;
         ada:boolean;
         inputDate:string;
+        inputInt:integer;
         x:integer;
     begin
+        write('Masukkan id buku yang ingin dikembalikan: ');
+        readln(inputInt);
         // Update list pinjam
         i:=0;
         x:=0;
