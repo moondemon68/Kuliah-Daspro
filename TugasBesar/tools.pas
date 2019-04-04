@@ -12,6 +12,7 @@ interface
     function dateSubstraction(date1:tanggal; date2:tanggal):integer;
     function numberOfDays(month:integer;year:integer):integer;
     function findJudul(inputInt:integer; var lBuku:listBuku):string;
+    function stringToInt(str: string):integer;
 
 implementation
     function tanggalToString(date: tanggal):string;
@@ -189,6 +190,7 @@ implementation
         found:boolean;
     begin
         found:=false;
+        i:=0;
         while (i<lBuku.neff) and (not(found)) do
         begin
             i:=i+1;
@@ -198,5 +200,22 @@ implementation
                 findJudul:=lBuku.list[i].judul_buku;
             end;
         end;
+    end;
+
+    function stringToInt(str: string):integer;
+    var
+        ret:integer;
+        i:integer;
+    begin
+        ret:=0;
+        for i:=1 to length(str) do
+        begin
+            ret:=ret+ord(str[i])-48;
+            if (i<length(str)) then
+            begin
+                ret:=ret*10;
+            end;
+        end;
+        stringToInt:=ret;
     end;
 end.

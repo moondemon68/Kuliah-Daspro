@@ -196,6 +196,20 @@ begin
         else if (option='cari_anggota') then
         begin
             cariAnggota(lAkun);     //  F15
+        end
+        else if (option='exit') then
+        begin
+            writeln('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
+            readln(inputStr);
+            if (inputStr='Y') then
+            begin
+                exitProgram(true,lBuku,lAkun,lPinjam,lKembali,lHilang);     // F16
+            end
+            else
+            begin
+                exitProgram(false,lBuku,lAkun,lPinjam,lKembali,lHilang);    // F16
+            end;
+            exit;
         end;
     end;
 end.
