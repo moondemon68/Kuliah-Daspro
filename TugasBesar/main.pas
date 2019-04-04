@@ -174,6 +174,10 @@ begin
         else if (option='lihat_laporan') then
         begin
             lihatLaporan(lHilang,lBuku);     // F08
+        end
+        else if (option='tambah_buku') then
+        begin
+            tambahBuku(lBuku);     // F09
         end;
     end;
 end.
