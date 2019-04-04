@@ -186,6 +186,10 @@ begin
         else if (option='riwayat') then
         begin
             lihatRiwayat(lPinjam,lBuku);      // F11;
+        end
+        else if (option='statistik') then
+        begin
+            statistik(lAkun,lBuku);     // F12;
         end;
     end;
 end.
