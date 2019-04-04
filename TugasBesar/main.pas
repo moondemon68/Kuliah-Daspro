@@ -182,6 +182,10 @@ begin
         else if (option='tambah_jumlah_buku') then
         begin
             tambahJumlahBuku(lBuku);       // F10;
+        end
+        else if (option='riwayat') then
+        begin
+            lihatRiwayat(lPinjam,lBuku);      // F11;
         end;
     end;
 end.
