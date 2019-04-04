@@ -13,6 +13,7 @@ interface
     function numberOfDays(month:integer;year:integer):integer;
     function findJudul(inputInt:integer; var lBuku:listBuku):string;
     function stringToInt(str: string):integer;
+    function stringToBool(str: string):boolean;
 
 implementation
     function tanggalToString(date: tanggal):string;
@@ -217,5 +218,17 @@ implementation
             end;
         end;
         stringToInt:=ret;
+    end;
+
+    function stringToBool(str: string):boolean;
+    begin
+        if (str='false') then
+        begin
+            stringToBool:=false;
+        end
+        else
+        begin
+            stringToBool:=true;
+        end;
     end;
 end.

@@ -37,19 +37,21 @@ implementation
             end;
             lBuku.list[i].id_buku:=stringToInt(tmp);
             p:=p+1;
-            lBuku.list[i].judul_buku:='';
+            tmp:='';
             while (p<length(s)) and (s[p+1]<>',') do
             begin
                 p:=p+1;
-                lBuku.list[i].judul_buku:=lBuku.list[i].judul_buku+s[p];
+                tmp:=tmp+s[p];
             end;
+            lBuku.list[i].judul_buku:=tmp;
             p:=p+1;
-            lBuku.list[i].author:='';
+            tmp:='';
             while (p<length(s)) and (s[p+1]<>',') do
             begin
                 p:=p+1;
-                lBuku.list[i].author:=lBuku.list[i].author+s[p];
+                tmp:=tmp+s[p];
             end;
+            lBuku.list[i].author:=tmp;
             p:=p+1;
             tmp:='';
             while (p<length(s)) and (s[p+1]<>',') do
@@ -67,12 +69,13 @@ implementation
             end;
             lBuku.list[i].tahun_penerbit:=stringToInt(tmp);
             p:=p+1;
-            lBuku.list[i].kategori:='';
+            tmp:='';
             while (p<length(s)) and (s[p+1]<>',') do
             begin
                 p:=p+1;
-                lBuku.list[i].kategori:=lBuku.list[i].kategori+s[p];
+                tmp:=tmp+s[p];
             end;
+            lBuku.list[i].kategori:=tmp;
         end;
 
         //Load Akun
@@ -87,45 +90,172 @@ implementation
             lAkun.neff:=lAkun.neff+1;
             readln(stream,s);
             p:=0;
-            lAkun.list[i].nama:='';
-            while (p<length(s)) and (s[p+1]<>',') do
-            begin
-                p:=p+1;
-                lAkun.list[i].nama:=lAkun.list[i].nama+s[p];
-            end;
-            p:=p+1;
-            lAkun.list[i].alamat:='';
-            while (p<length(s)) and (s[p+1]<>',') do
-            begin
-                p:=p+1;
-                lAkun.list[i].alamat:=lAkun.list[i].alamat+s[p];
-            end;
-            p:=p+1;
-            lAkun.list[i].username:='';
-            while (p<length(s)) and (s[p+1]<>',') do
-            begin
-                p:=p+1;
-                lAkun.list[i].username:=lAkun.list[i].username+s[p];
-            end;
-            p:=p+1;
-            lAkun.list[i].password:='';
-            while (p<length(s)) and (s[p+1]<>',') do
-            begin
-                p:=p+1;
-                lAkun.list[i].password:=lAkun.list[i].password+s[p];
-            end;
-            p:=p+1;
-            lAkun.list[i].role:=false;
             tmp:='';
             while (p<length(s)) and (s[p+1]<>',') do
             begin
                 p:=p+1;
                 tmp:=tmp+s[p];
             end;
-            if (tmp='true') then
+            lAkun.list[i].nama:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
             begin
-                lAkun.list[i].role:=true;
+                p:=p+1;
+                tmp:=tmp+s[p];
             end;
+            lAkun.list[i].alamat:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lAkun.list[i].username:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lAkun.list[i].password:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lAkun.list[i].role:=stringToBool(tmp);
+        end;
+
+        //Load Peminjaman
+        write('Masukkan nama File Peminjaman: ');
+        readln(filename);
+        assign(stream,filename);
+        reset(stream);
+        i:=0;
+        while not(eof(stream)) do
+        begin
+            i:=i+1;
+            lPinjam.neff:=lPinjam.neff+1;
+            readln(stream,s);
+            p:=0;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lPinjam.list[i].username:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lPinjam.list[i].id_buku:=stringToInt(tmp);
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lPinjam.list[i].tanggal_peminjaman:=stringToTanggal(tmp);
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lPinjam.list[i].tanggal_batas_pengembalian:=stringToTanggal(tmp);
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lPinjam.list[i].status_pengembalian:=stringToBool(tmp);
+        end;
+
+        //Load Pengembalian
+        write('Masukkan nama File Pengembalian: ');
+        readln(filename);
+        assign(stream,filename);
+        reset(stream);
+        i:=0;
+        while not(eof(stream)) do
+        begin
+            i:=i+1;
+            lKembali.neff:=lKembali.neff+1;
+            readln(stream,s);
+            p:=0;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lKembali.list[i].username:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lKembali.list[i].id_buku:=stringToInt(tmp);
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lKembali.list[i].tanggal_pengembalian:=stringToTanggal(tmp);
+        end;
+
+        //Load Kehilangan
+        write('Masukkan nama File Kehilangan: ');
+        readln(filename);
+        assign(stream,filename);
+        reset(stream);
+        i:=0;
+        while not(eof(stream)) do
+        begin
+            i:=i+1;
+            lHilang.neff:=lHilang.neff+1;
+            readln(stream,s);
+            p:=0;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lHilang.list[i].username:=tmp;
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lHilang.list[i].id_buku:=stringToInt(tmp);
+            p:=p+1;
+            tmp:='';
+            while (p<length(s)) and (s[p+1]<>',') do
+            begin
+                p:=p+1;
+                tmp:=tmp+s[p];
+            end;
+            lHilang.list[i].tanggal_laporan:=stringToTanggal(tmp);
         end;
     end;
 end.
