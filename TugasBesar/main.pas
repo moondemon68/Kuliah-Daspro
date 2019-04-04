@@ -54,15 +54,15 @@ begin
             readln(acc.username);
             write('Masukkan password: ');
             readln(acc.password);
-            login(acc,lAkun,sudahLogin);    //F02
+            login(currentUser,acc,lAkun,sudahLogin);    //F02
             if (sudahLogin=false) then
             begin
                 writeln('Username/Password salah! Silahkan coba lagi.');
             end
             else 
             begin
-                currentUser:=acc;
                 writeln('Welcome, ',currentUser.username);
+                writeln(currentUser.role);
             end;
         end
         else if (option='exit') then
@@ -145,6 +145,7 @@ begin
 
     while (currentUser.role=true) do
     begin
+        write('Masukkan pilihan: ');
         readln(option);
         if (option='register') then
         begin
