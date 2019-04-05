@@ -106,7 +106,7 @@ begin
         end 
         else if (option='save') then
         begin
-            simpanData(lBuku,lAkun,lPinjam,lKembali,lHilang);   // F13
+            simpanData(lBuku,lAkun,lPinjam,lKembali,lHilang);   // F14
         end
         else if (option='exit') then
         begin
@@ -179,7 +179,7 @@ begin
         end
         else if (option='save') then
         begin
-            simpanData(lBuku,lAkun,lPinjam,lKembali,lHilang);   // F13
+            simpanData(lBuku,lAkun,lPinjam,lKembali,lHilang);   // F14
         end
         else if (option='exit') then
         begin
