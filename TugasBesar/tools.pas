@@ -14,9 +14,11 @@ interface
     function findJudul(inputInt:integer; var lBuku:listBuku):string;
     function stringToInt(str: string):integer;
     function stringToBool(str: string):boolean;
+    function stringCompare(a:string; b:string):boolean;
 
 implementation
     function tanggalToString(date: tanggal):string;
+    // Mengubah tanggal menjadi string
     var
         ret:string;
     begin
@@ -64,6 +66,7 @@ implementation
     end;
 
     function stringToTanggal(str: string):tanggal;
+    // Mengubah string menjadi tanggal
     begin
         stringToTanggal.hari:=(Integer(str[1])-48)*10+(Integer(str[2])-48);
         stringToTanggal.bulan:=(Integer(str[4])-48)*10+(Integer(str[5])-48);
@@ -71,6 +74,7 @@ implementation
     end;
 
     function addOneWeek(date:tanggal):tanggal;
+    // Menambahkan 1 minggu terhadap sebuah tanggal
     begin
         addOneWeek:=date;
         addOneWeek.hari:=addOneWeek.hari+7;
@@ -102,6 +106,7 @@ implementation
     end;
 
     function isLeapYear(year:integer):boolean;
+    // Menentukan apakah sebuah tahun merupakan kabisat atau tidak
     begin
         if ((year mod 400 = 0) or ((year mod 4 = 0) and not (year mod 100 = 0))) then
         begin
@@ -114,6 +119,7 @@ implementation
     end;
 
     function dateSubstraction(date1:tanggal; date2:tanggal):integer;
+    // Mengembalikan hasil pengurangan antara date1 dan date2
     var
         ans:integer;
     begin
@@ -166,6 +172,7 @@ implementation
     end;
 
     function numberOfDays(month:integer; year:integer):integer;
+    // Mengembalikan jumlah hari yang ada pada bulan tertentu dan pada tahun tertentu
     begin
         if (month=1) or (month=3) or (month=5) or (month=7) or (month=8) or (month=10) or (month=12) then
         begin
@@ -186,6 +193,7 @@ implementation
     end;
 
     function findJudul(inputInt:integer; var lBuku:listBuku):string;
+    // Mencari judul buku berdasarkan id buku
     var
         i:integer;
         found:boolean;
@@ -204,6 +212,7 @@ implementation
     end;
 
     function stringToInt(str: string):integer;
+    // Mengubah string menjadi integer
     var
         ret:integer;
         i:integer;
@@ -221,6 +230,7 @@ implementation
     end;
 
     function stringToBool(str: string):boolean;
+    // Mengubah string 'TRUE' dan 'FALSE' menjadi boolean
     begin
         if (str='FALSE') then
         begin
@@ -230,5 +240,49 @@ implementation
         begin
             stringToBool:=true;
         end;
+    end;
+
+    function stringCompare(a:string; b:string):boolean;
+    // Mengembalikan true bila a lebih kecil dari b secara leksikografis
+    var
+        i:integer;
+        x:integer;
+        ret:boolean;
+        done:boolean;
+    begin
+        // kalau tidak ada huruf yang berbeda, maka string yang dianggap lebih kecil adalah string yang lebih pendek
+        x:=0;
+        done:=false;
+        if (length(a)<length(b)) then
+        begin
+            x:=length(a);
+            ret:=true;
+        end
+        else
+        begin
+            x:=length(b);
+            ret:=false;
+        end;
+        // Mengecek tiap huruf pada string
+        i:=0;
+        while (i<x) and (done=false) do
+        begin
+            i:=i+1;
+            if (a[i]<b[i]) then
+            begin
+                done:=true;
+                ret:=true;
+            end
+            else if (a[i]>b[i]) then
+            begin
+                done:=true;
+                ret:=false;
+            end
+            else // a[i]=b[i]
+            begin
+                done:=false;    // do nothing
+            end;
+        end;
+        stringCompare:=ret;
     end;
 end.
