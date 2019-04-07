@@ -124,50 +124,7 @@ implementation
         ans:integer;
     begin
         ans:=0;
-        while (date1.tahun>date2.tahun) do
-        begin
-            if (isLeapYear(date1.tahun)) then
-            begin
-                ans:=ans+366;
-            end
-            else 
-            begin
-                ans:=ans+365;
-            end;
-            date1.tahun:=date1.tahun-1;
-        end;
-        while (date1.tahun<date2.tahun) do
-        begin
-            if (isLeapYear(date1.tahun)) then
-            begin
-                ans:=ans-366;
-            end
-            else 
-            begin
-                ans:=ans-365;
-            end;
-            date1.tahun:=date1.tahun+1;
-        end;
-        while (date1.bulan>date2.bulan) do 
-        begin
-            ans:=ans+numberOfDays(date1.bulan,date1.tahun);
-            date1.bulan:=date1.bulan-1;
-        end;
-        while (date1.bulan<date2.bulan) do 
-        begin
-            ans:=ans-numberOfDays(date1.bulan,date1.tahun);
-            date1.bulan:=date1.bulan+1;
-        end;
-        while (date1.hari>date2.hari) do 
-        begin
-            ans:=ans+1;
-            date1.hari:=date1.hari-1;
-        end;
-        while (date1.hari<date2.hari) do 
-        begin
-            ans:=ans-1;
-            date1.hari:=date1.hari+1;
-        end;
+        // TO BE IMPLEMENTED
         dateSubstraction:=ans;
     end;
 
