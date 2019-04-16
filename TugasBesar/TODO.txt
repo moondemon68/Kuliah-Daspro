@@ -1,6 +1,13 @@
 TODO:
 B01 password hashing
-B02 implement denda
+B02 implement dateSubstraction
 
 BUG:
-tool -> dateSubstraction wrong answer
+f04a -> input '<=' malah keluar '<' doang
+f12m -> statistiknya ngaco (yang buku)
+f15m -> belom dikirim
+
+a: arief
+m: andre
+e: elizabeth 
+y: yan

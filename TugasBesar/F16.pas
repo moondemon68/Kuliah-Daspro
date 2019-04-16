@@ -13,7 +13,7 @@ implementation
         save:boolean;
         inputStr:string;
     begin
-        writeln('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
+        write('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
         readln(inputStr);
         save:=false;
         if (inputStr='Y') then

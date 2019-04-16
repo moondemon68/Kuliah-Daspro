@@ -4,7 +4,7 @@
 unit F13;
 // Load file
 interface
-    uses typeList,tools,sysutils;
+    uses typeList,tools;
     procedure loadData(var lBuku: listBuku; var lAkun: listAkun; var lPinjam: listPinjam; var lKembali: listKembali; var lHilang: listHilang);
 
 implementation
