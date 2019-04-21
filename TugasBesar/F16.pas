@@ -1,5 +1,5 @@
 // Designer : 
-// Coder    : 
+// Coder    : Morgen Sudyanto (16518380)
 // Tester   : 
 unit F16;
 // Exit
@@ -13,7 +13,7 @@ implementation
         save:boolean;
         inputStr:string;
     begin
-        write('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ?');
+        write('Apakah Anda mau melakukan penyimpanan file yang sudah dilakukan (Y/N) ? ');
         readln(inputStr);
         save:=false;
         if (inputStr='Y') then

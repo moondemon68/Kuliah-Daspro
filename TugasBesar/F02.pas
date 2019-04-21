@@ -1,26 +1,32 @@
 // Designer : 
-// Coder    : 
+// Coder    : Arief Darmawan Tantriady (16518058)
 // Tester   : 
 unit F02;
-// Login
+//fungsi login
+
 interface
-    uses typeList;
-    procedure login(var currentUser:akun; var acc:akun; var lAkun:listAkun; var sudahLogin:boolean);
+uses typeList,tools;
+
+var 
+	i : integer;
+procedure login(var currentUser,acc : akun ;var lAkun:listAkun;var sudahLogin : boolean);
 
 implementation
-    procedure login(var currentUser:akun; var acc:akun; var lAkun:listAkun; var sudahLogin:boolean);
-    var
-        i :integer;
-    begin
-        i:=0;
-        while ((i<lAkun.neff) and not(sudahLogin)) do
-        begin
-            i:=i+1;
-            if ((acc.username=lAkun.list[i].username) and (acc.password=lAkun.list[i].password)) then
-            begin
-                currentUser:=lAkun.list[i];
-                sudahLogin:=true;
-            end;
-        end;
-    end;
+procedure login(var currentUser,acc : akun;var lAkun:listAkun; var sudahLogin : boolean); 	
+begin
+	//cek username
+	for i:=1 to lAkun.neff do
+	begin
+		if(acc.username=lAkun.list[i].username) then
+		begin
+			if(encrypt(acc.username,acc.password) = lAkun.list[i].password) then
+			begin
+				currentUser:=lAkun.list[i];
+				sudahLogin:= True;
+			end;
+		end;
+	end;
+end;
+
 end.
+	

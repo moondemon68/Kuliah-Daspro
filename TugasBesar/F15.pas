@@ -1,5 +1,5 @@
 // Designer : 
-// Coder    : 
+// Coder    : Morgen Sudyanto (16518380)
 // Tester   : 
 unit F15;
 // Pencarian anggota

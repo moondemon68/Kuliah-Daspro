@@ -1,5 +1,5 @@
 // Designer : 
-// Coder    : 
+// Coder    : Morgen Sudyanto (16518380)
 // Tester   : 
 unit F06;
 // Pengembalian buku
@@ -25,8 +25,9 @@ implementation
         while (i<lPinjam.neff) and (not(ada)) do
         begin
             i:=i+1;
-            if (username=lPinjam.list[i].username) and (inputInt=lPinjam.list[i].id_buku) then
+            if (username=lPinjam.list[i].username) and (inputInt=lPinjam.list[i].id_buku) and (lPinjam.list[i].status_pengembalian=false) then
             begin
+                ada:=true;
                 writeln('Data peminjaman: ');
                 writeln('Username: ',username);
                 writeln('Judul buku: ',findJudul(inputInt,lBuku));
@@ -42,6 +43,7 @@ implementation
                 end else
                 begin
                     writeln('Anda terlambat mengembalikan buku.');
+                    writeln('Anda harus membayar denda sebesar ',-1*x*2000);
                 end;
                 lPinjam.list[i].status_pengembalian:=true;
             end;

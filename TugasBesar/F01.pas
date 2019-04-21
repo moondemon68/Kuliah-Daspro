@@ -1,26 +1,52 @@
 // Designer : 
-// Coder    : 
+// Coder    : Arief Darmawan Tantriady (16518058)
 // Tester   : 
 unit F01;
-// Registrasi akun
-interface
-    uses typeList,tools;   
-    procedure register(var lAkun:listAkun);
+//fungsi register 
 
+interface
+//kita panggil typeList yang berisi type yang akan digunakan pada program
+uses typeList,tools;
+	
+
+var
+	//variable untuk menulis
+	textline: string;
+
+procedure register(var a:listAkun);
+	
 implementation
-    procedure register(var lAkun:listAkun);
-    begin
-        lAkun.neff:=lAkun.neff+1;
-        write('Masukkan nama pengunjung: ');
-        readln(lAkun.list[lAkun.neff].nama);
-        write('Masukkan alamat pengunjung: ');
-        readln(lAkun.list[lAkun.neff].alamat);
-        write('Masukkan username pengunjung: ');
-        readln(lAkun.list[lAkun.neff].username);
-        write('Masukkan password pengunjung: ');
-        readln(lAkun.list[lAkun.neff].password);
-        lAkun.list[lAkun.neff].role:=false;
-        writeln();
-        writeln('Pengunjung ',lAkun.list[lAkun.neff].nama,' berhasil terdaftar sebagai user.');
-    end;
+procedure register(var a:listAkun);
+begin
+	a.neff := a.neff + 1;
+	if(a.neff=1) then//register pertama
+	begin
+		//algo baca
+		write('Masukkan nama pengunjung: ');
+		readln(a.list[a.neff].nama);
+		write('Masukkan alamat pengunjung: ');
+		readln(a.list[a.neff].alamat);
+		write('Masukkan username pengunjung: ');
+		readln(a.list[a.neff].username);
+		write('Masukkan password pengunjung: ');
+		readln(a.list[a.neff].password);
+		a.list[a.neff].password:=encrypt(a.list[a.neff].username,a.list[a.neff].password);
+		writeln;
+		writeln('Pengunjung '+a.list[a.neff].nama+' berhasil terdaftar sebagai user.');
+	end else//register kedua dan seterusnya
+	begin
+		//algo baca
+		write('Masukkan nama pengunjung: ');
+		readln(a.list[a.neff].nama);
+		write('Masukkan alamat pengunjung: ');
+		readln(a.list[a.neff].alamat);
+		write('Masukkan username pengunjung: ');
+		readln(a.list[a.neff].username);
+		write('Masukkan password pengunjung: ');
+		readln(a.list[a.neff].password);
+		a.list[a.neff].password:=encrypt(a.list[a.neff].username,a.list[a.neff].password);
+		writeln;
+		writeln('Pengunjung '+a.list[a.neff].nama+' berhasil terdaftar sebagai user.');
+	end;
+end;
 end.

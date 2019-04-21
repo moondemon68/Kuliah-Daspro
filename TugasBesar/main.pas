@@ -1,9 +1,9 @@
 // Designer : 
-// Coder    : 
+// Coder    : Morgen Sudyanto (16518380)
 // Tester   : 
 Program main;
 // Main Program
-uses F01a,F02a,F03a,F04a,F05e,F06e,F07,F08,F09e,F10e,F11,F12m,F13,F14,F15,F16,typeList,tools;
+uses F01,F02,F03,F04,F05,F06,F07,F08,F09,F10,F11,F12,F13,F14,F15,F16,typeList,tools;
 
 // KAMUS
 var
@@ -98,7 +98,7 @@ begin
         end
         else if (option='kembalikan_buku') then
         begin
-            kembalikanBuku(currentUser,lPinjam,lBuku,lKembali);     // F06
+            kembalikanBuku(currentUser.username,lPinjam,lBuku,lKembali);     // F06
         end
         else if (option='lapor_hilang') then
         begin

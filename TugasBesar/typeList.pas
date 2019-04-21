@@ -1,5 +1,5 @@
 // Designer : 
-// Coder    : 
+// Coder    : Morgen Sudyanto (16518380)
 // Tester   : 
 unit typeList;
 // Berisi tipe - tipe yang akan digunakan pada program
