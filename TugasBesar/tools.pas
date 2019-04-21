@@ -268,42 +268,142 @@ implementation
         begin
             rot:=rot*(ord(user[(i mod length(user))+1]));
             rot:=rot mod 256;
-            if (rot=0) then rot:=1;
+            if (rot=0) then 
+            begin
+                rot:=1;
+            end;
             temp:= ord(pass[i]);
             temp:= temp + rot;
             temp:= temp mod 256;
-            if (temp div 16) = 0 then ret:=ret+'0'
-            else if (temp div 16) = 1 then ret:=ret+'1'
-            else if (temp div 16) = 2 then ret:=ret+'2'
-            else if (temp div 16) = 3 then ret:=ret+'3'
-            else if (temp div 16) = 4 then ret:=ret+'4'
-            else if (temp div 16) = 5 then ret:=ret+'5'
-            else if (temp div 16) = 6 then ret:=ret+'6'
-            else if (temp div 16) = 7 then ret:=ret+'7'
-            else if (temp div 16) = 8 then ret:=ret+'8'
-            else if (temp div 16) = 9 then ret:=ret+'9'
-            else if (temp div 16) = 10 then ret:=ret+'A'
-            else if (temp div 16) = 11 then ret:=ret+'B'
-            else if (temp div 16) = 12 then ret:=ret+'C'
-            else if (temp div 16) = 13 then ret:=ret+'D'
-            else if (temp div 16) = 14 then ret:=ret+'E'
-            else if (temp div 16) = 15 then ret:=ret+'F';
-            if (temp mod 16) = 0 then ret:=ret+'0'
-            else if (temp mod 16) = 1 then ret:=ret+'1'
-            else if (temp mod 16) = 2 then ret:=ret+'2'
-            else if (temp mod 16) = 3 then ret:=ret+'3'
-            else if (temp mod 16) = 4 then ret:=ret+'4'
-            else if (temp mod 16) = 5 then ret:=ret+'5'
-            else if (temp mod 16) = 6 then ret:=ret+'6'
-            else if (temp mod 16) = 7 then ret:=ret+'7'
-            else if (temp mod 16) = 8 then ret:=ret+'8'
-            else if (temp mod 16) = 9 then ret:=ret+'9'
-            else if (temp mod 16) = 10 then ret:=ret+'A'
-            else if (temp mod 16) = 11 then ret:=ret+'B'
-            else if (temp mod 16) = 12 then ret:=ret+'C'
-            else if (temp mod 16) = 13 then ret:=ret+'D'
-            else if (temp mod 16) = 14 then ret:=ret+'E'
-            else if (temp mod 16) = 15 then ret:=ret+'F';
+            if (temp div 16) = 0 then 
+            begin
+                ret:=ret+'0';
+            end
+            else if (temp div 16) = 1 then 
+            begin
+                ret:=ret+'1';
+            end
+            else if (temp div 16) = 2 then 
+            begin
+                ret:=ret+'2';
+            end
+            else if (temp div 16) = 3 then 
+            begin
+                ret:=ret+'3';
+            end
+            else if (temp div 16) = 4 then 
+            begin
+                ret:=ret+'4';
+            end
+            else if (temp div 16) = 5 then 
+            begin
+                ret:=ret+'5';
+            end
+            else if (temp div 16) = 6 then 
+            begin
+                ret:=ret+'6';
+            end
+            else if (temp div 16) = 7 then 
+            begin
+                ret:=ret+'7';
+            end
+            else if (temp div 16) = 8 then 
+            begin
+                ret:=ret+'8';
+            end
+            else if (temp div 16) = 9 then 
+            begin
+                ret:=ret+'9';
+            end
+            else if (temp div 16) = 10 then 
+            begin
+                ret:=ret+'A';
+            end
+            else if (temp div 16) = 11 then 
+            begin
+                ret:=ret+'B';
+            end
+            else if (temp div 16) = 12 then 
+            begin
+                ret:=ret+'C';
+            end
+            else if (temp div 16) = 13 then 
+            begin
+                ret:=ret+'D';
+            end
+            else if (temp div 16) = 14 then 
+            begin
+                ret:=ret+'E';
+            end
+            else if (temp div 16) = 15 then 
+            begin
+                ret:=ret+'F';
+            end;
+
+            if (temp mod 16) = 0 then 
+            begin
+                ret:=ret+'0';
+            end
+            else if (temp mod 16) = 1 then 
+            begin
+                ret:=ret+'1';
+            end
+            else if (temp mod 16) = 2 then 
+            begin
+                ret:=ret+'2';
+            end
+            else if (temp mod 16) = 3 then 
+            begin
+                ret:=ret+'3';
+            end
+            else if (temp mod 16) = 4 then 
+            begin
+                ret:=ret+'4';
+            end
+            else if (temp mod 16) = 5 then 
+            begin
+                ret:=ret+'5';
+            end
+            else if (temp mod 16) = 6 then 
+            begin
+                ret:=ret+'6';
+            end
+            else if (temp mod 16) = 7 then 
+            begin
+                ret:=ret+'7';
+            end
+            else if (temp mod 16) = 8 then 
+            begin
+                ret:=ret+'8';
+            end
+            else if (temp mod 16) = 9 then 
+            begin
+                ret:=ret+'9';
+            end
+            else if (temp mod 16) = 10 then 
+            begin
+                ret:=ret+'A';
+            end
+            else if (temp mod 16) = 11 then 
+            begin
+                ret:=ret+'B';
+            end
+            else if (temp mod 16) = 12 then 
+            begin
+                ret:=ret+'C';
+            end
+            else if (temp mod 16) = 13 then 
+            begin
+                ret:=ret+'D';
+            end
+            else if (temp mod 16) = 14 then 
+            begin
+                ret:=ret+'E';
+            end
+            else if (temp mod 16) = 15 then 
+            begin
+                ret:=ret+'F';
+            end;
         end;
         for i:= length(ret) downto 1 do
         begin
