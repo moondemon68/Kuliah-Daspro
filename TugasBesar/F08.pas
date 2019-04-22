@@ -1,6 +1,6 @@
-// Designer : 
-// Coder    : Morgen Sudyanto (16518380)
-// Tester   : 
+// Designer : Yan Arie Motinggo (16518268)
+// Coder    : Yan Arie Motinggo (16518268)
+// Tester   : Morgen Sudyanto (16518380)
 unit F08;
 // Melihat laporan buku yang hilang
 interface

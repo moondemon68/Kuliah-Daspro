@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Andre Subagja Manurung (16518254)
 // Coder    : Andre Subagja Manurung (16518254)
-// Tester   : 
+// Tester   : Morgen Sudyanto (16518380)
 unit F12;
 // Statistik
 interface

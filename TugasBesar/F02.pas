@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Arief Darmawan Tantriady (16518058)
 // Coder    : Arief Darmawan Tantriady (16518058)
-// Tester   : 
+// Tester   : Morgen Sudyanto (16518380)
 unit F02;
 //fungsi login
 

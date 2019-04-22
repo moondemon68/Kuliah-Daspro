@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Elisabeth Levana (16518128)
 // Coder    : Elisabeth Levana (16518128)
-// Tester   : 
+// Tester   : Arief Darmawan Tantriady (16518058)
 unit F05;
 //pinjamBuku
 

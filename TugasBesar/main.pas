@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : 
+// Tester   : Yan Arie Motinggo (16518268)
 Program main;
 // Main Program
 uses F01,F02,F03,F04,F05,F06,F07,F08,F09,F10,F11,F12,F13,F14,F15,F16,typeList,tools;

@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Elisabeth Levana (16518128)
 // Coder    : Elisabeth Levana (16518128)
-// Tester   : 
+// Tester   : Morgen Sudyanto (16518380)
 unit F09;
 //tambahBuku
 

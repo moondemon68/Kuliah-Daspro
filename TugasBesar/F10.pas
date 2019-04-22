@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Elisabeth Levana (16518128)
 // Coder    : Elisabeth Levana (16518128)
-// Tester   : 
+// Tester   : Andre Subagja Manurung (16518254)
 unit F10;
 //tambahJumlahBuku
 

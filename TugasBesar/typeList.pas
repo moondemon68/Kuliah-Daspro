@@ -1,6 +1,6 @@
-// Designer : 
+// Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : 
+// Tester   : Yan Arie Motinggo (16518268)
 unit typeList;
 // Berisi tipe - tipe yang akan digunakan pada program
 interface
