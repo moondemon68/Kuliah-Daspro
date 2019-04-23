@@ -70,6 +70,7 @@ implementation
             end;
             x:=x div 10;
         end;
+        IntToStr:='';
         for i:=length(ret) downto 1 do
         begin
             IntToStr:=IntToStr+ret[i];
