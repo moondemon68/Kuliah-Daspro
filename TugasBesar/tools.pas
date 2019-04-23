@@ -5,6 +5,7 @@ unit tools;
 // Tools untuk membantu program
 interface
     uses typeList;
+    function IntToStr(num: integer):string;
     function tanggalToString(date: tanggal):string;
     function stringToTanggal(str: string):tanggal;
     function addOneWeek(date:tanggal):tanggal;
