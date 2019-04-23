@@ -31,7 +31,7 @@ begin
     loadData(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F13
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
     // Input opsi
-    while ((sudahLogin=false)) do
+    while (sudahLogin=false) do
     begin
         readln(option);
         if (option='help') then
@@ -139,6 +139,7 @@ begin
             writeln('tambah_jumlah_buku : Menambah jumlah buku yang sudah ada');
             writeln('riwayat            : Melihat riwayat peminjaman buku seorang pengunjung');
             writeln('statistik          : Melihat statistik pengunjung dan buku');
+            writeln('cari_anggota       : Mencari data anggota');
             writeln('save               : Menyimpan data ke format csv');
             writeln('exit               : Keluar dari sistem');
         end

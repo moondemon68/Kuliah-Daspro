@@ -6,7 +6,6 @@ unit F02;
 
 interface
 	uses typeList,tools;
-
 	var 
 		i : integer;
 	procedure login(var currentUser,acc : akun ;var lAkun:listAkun;var sudahLogin : boolean);

@@ -19,7 +19,7 @@ implementation
 	begin
 	bukucari.neff:=0;
 	write('Masukkan kategori: ');
-		repeat
+	repeat
 		readln(ktg);
 		if(ktg='sastra') or (ktg='sains') or (ktg='manga') or (ktg='sejarah') or (ktg='programming') then
 		begin
@@ -62,6 +62,6 @@ implementation
 		begin
 			writeln('Kategori '+ktg+' tidak valid.');
 		end;
-		until (ktg='sastra') or (ktg='sains') or (ktg='manga') or (ktg='sejarah') or (ktg='programming');
+	until (ktg='sastra') or (ktg='sains') or (ktg='manga') or (ktg='sejarah') or (ktg='programming');
 	end;
 end.
