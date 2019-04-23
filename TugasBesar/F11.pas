@@ -1,6 +1,6 @@
 // Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : Arief Darmawan Tantriady (16518058)
+// Tester   : Morgen Sudyanto (16518380)
 unit F11;
 // Melihat riwayat peminjaman
 interface

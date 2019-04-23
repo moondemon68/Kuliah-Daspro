@@ -1,6 +1,6 @@
 // Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : Elisabeth Levana (16518128)
+// Tester   : Morgen Sudyanto (16518380)
 unit F14;
 // Load file
 interface

@@ -1,6 +1,6 @@
 // Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : Yan Arie Motinggo (16518268)
+// Tester   : Morgen Sudyanto (16518380)
 unit tools;
 // Tools untuk membantu program
 interface

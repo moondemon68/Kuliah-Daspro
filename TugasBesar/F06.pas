@@ -1,6 +1,6 @@
 // Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : Arief Darmawan Tantriady (16518058)
+// Tester   : Morgen Sudyanto (16518380)
 unit F06;
 // Pengembalian buku
 interface
@@ -48,22 +48,29 @@ implementation
                 lPinjam.list[i].status_pengembalian:=true;
             end;
         end;
-        // Update list buku
-        i:=0;
-        ada:=false;
-        while (i<lBuku.neff) and (not(ada)) do
+        if (ada=true) then
         begin
-            i:=i+1;
-            if (lBuku.list[i].id_buku=inputInt) then
+            // Update list buku
+            i:=0;
+            ada:=false;
+            while (i<lBuku.neff) and (not(ada)) do
             begin
-                ada:=true;
-                lBuku.list[i].jumlah_buku:=lBuku.list[i].jumlah_buku+1;
+                i:=i+1;
+                if (lBuku.list[i].id_buku=inputInt) then
+                begin
+                    ada:=true;
+                    lBuku.list[i].jumlah_buku:=lBuku.list[i].jumlah_buku+1;
+                end;
             end;
+            // Update list kembali
+            lKembali.neff:=lKembali.neff+1;
+            lKembali.list[lKembali.neff].username:=username;
+            lKembali.list[lKembali.neff].id_buku:=inputInt;
+            lKembali.list[lKembali.neff].tanggal_pengembalian:=stringToTanggal(inputDate);
+        end
+        else
+        begin
+            writeln('Anda tidak meminjam buku ini!');
         end;
-        // Update list kembali
-        lKembali.neff:=lKembali.neff+1;
-        lKembali.list[lKembali.neff].username:=username;
-        lKembali.list[lKembali.neff].id_buku:=inputInt;
-        lKembali.list[lKembali.neff].tanggal_pengembalian:=stringToTanggal(inputDate);
     end;
 end.

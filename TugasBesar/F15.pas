@@ -1,6 +1,6 @@
 // Designer : Morgen Sudyanto (16518380)
 // Coder    : Morgen Sudyanto (16518380)
-// Tester   : Andre Subagja Manurung (16518254)
+// Tester   : Morgen Sudyanto (16518380)
 unit F15;
 // Pencarian anggota
 interface
