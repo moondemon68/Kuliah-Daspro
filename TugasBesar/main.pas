@@ -27,6 +27,7 @@ begin
     currentUser.password:='';
     currentUser.role:=false;
     writeln('Welcome :)');
+    writeln('Load database dulu yak!');
     loadData(lBuku,lAkun,lPinjam,lKembali,lHilang);     // F13
     writeln('Ketik "help" untuk melihat daftar opsi yang dapat dipilih.');
     // Input opsi

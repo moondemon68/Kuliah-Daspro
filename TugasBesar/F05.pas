@@ -5,7 +5,7 @@ unit F05;
 //pinjamBuku
 
 interface 
-uses typeList,tools;
+	uses typeList,tools;
 	procedure pinjamBuku(var currentUser : akun ; var lBuku: listbuku; var lPinjam : listpinjam);
 	 
 implementation

@@ -4,7 +4,7 @@
 unit tools;
 // Tools untuk membantu program
 interface
-    uses typeList,sysutils;
+    uses typeList;
     function tanggalToString(date: tanggal):string;
     function stringToTanggal(str: string):tanggal;
     function addOneWeek(date:tanggal):tanggal;
@@ -17,7 +17,65 @@ interface
     function stringCompare(a:string; b:string):boolean;
     function encrypt(user:string;pass:string):string;
 
-implementation
+implementation 
+    function IntToStr(num: integer):string;
+    //Mengubah integer menjadi string
+    var
+        ret:string;
+        x,i:integer;
+    begin
+        ret:='';
+        x:=num;
+        while (x>0) do
+        begin
+            if (x mod 10=0) then
+            begin
+                ret+='0';
+            end
+            else if (x mod 10=1) then
+            begin
+                ret+='1';
+            end
+            else if (x mod 10=2) then
+            begin
+                ret+='2';
+            end
+            else if (x mod 10=3) then
+            begin
+                ret+='3';
+            end
+            else if (x mod 10=4) then
+            begin
+                ret+='4';
+            end
+            else if (x mod 10=5) then
+            begin
+                ret+='5';
+            end
+            else if (x mod 10=6) then
+            begin
+                ret+='6';
+            end
+            else if (x mod 10=7) then
+            begin
+                ret+='7';
+            end
+            else if (x mod 10=8) then
+            begin
+                ret+='8';
+            end
+            else if (x mod 10=9) then
+            begin
+                ret+='9';
+            end;
+            x:=x div 10;
+        end;
+        for i:=length(ret) downto 1 do
+        begin
+            IntToStr:=IntToStr+ret[i];
+        end;
+    end;
+
     function tanggalToString(date: tanggal):string;
     // Mengubah tanggal menjadi string
     var

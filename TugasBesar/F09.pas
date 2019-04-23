@@ -5,12 +5,10 @@ unit F09;
 //tambahBuku
 
 interface 
-uses typeList,tools;
+	uses typeList,tools;
 	procedure tambahBuku(var lbuku:listbuku);
 	{Buku baru ditambahkan ke dalam filebuku.csv}
-	
-
-	
+		
 implementation
 	procedure tambahBuku(var lbuku:listbuku);
 	begin

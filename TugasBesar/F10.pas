@@ -5,7 +5,7 @@ unit F10;
 //tambahJumlahBuku
 
 interface 
-uses typeList,tools;
+	uses typeList,tools;
 	procedure tambahJumlahBuku(var lbuku:listbuku);
 	{Buku yang sudah ada ditambahkan jumlahnya dalam file buku.csv}
 
